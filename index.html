@@ -4,6 +4,35 @@
     <meta charset="UTF-8">
     <title> Homepage - Kane Lacaba</title>
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        // Allow only 1 checkbox at a time
+        function handleSelection(clickedBox) {
+            const checkboxes = document.querySelectorAll('input[name="HTMLAct"]');
+            checkboxes.forEach(box => {
+                if (box !== clickedBox) {
+                    box.checked = false;
+                }
+            });
+        }
+
+        // Go to selected activity page
+        function goToSelected() {
+            const selected = document.querySelector('input[name="HTMLAct"]:checked');
+
+            if (!selected) {
+                alert("⚠ Please select one activity first.");
+                return;
+            }
+
+            // Redirect based on selection
+            if (selected.value === "Activity 1") {
+                location.href = "Activity1.html";
+            } else if (selected.value === "Activity 2") {
+                location.href = "Activity2.html";
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -29,40 +58,43 @@
 
     <!-- Right: Info -->
     <div class="hero-right">
-
         <p>Hello, I'm</p>
-
-        <h1>
-            KANE JOEL<br>
-            LACABA
-        </h1>
-
+        <h1>KANE JOEL<br>LACABA</h1>
         <h3>Graphic Designer | Artist</h3>
-
-        <p>
-            I create modern and creative designs
-            that help brands stand out.
-        </p>
-
-
-
+        <p>I create modern and creative designs that help brands stand out.</p>
     </div>
 
 </section>
 
-<!-- Welcome -->
+<!-- Activities Section -->
 <section>
+    <h2 class="title">Here's my previous HTML activities</h2>
 
-    <h2 class="title">Welcome</h2>
+    <p>Select ONLY ONE option:</p>
 
-    <p style="max-width:800px;margin:auto; padding: 40px;">
-        Explore my portfolio, artworks,
-        and creative projects.
-    </p>
-            <!-- Button -->
-        <button class="main-btn" onclick="location.href='Gallery.html'">
-            View My Works
-        </button>
+    <br>
+
+    <label>
+        <input type="checkbox" name="HTMLAct" value="Activity 1" onclick="handleSelection(this)">
+        Activity 1 : Basic HTML
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="HTMLAct" value="Activity 2" onclick="handleSelection(this)">
+        Activity 2 : Background and 10 Images
+    </label>
+    <br><br>
+
+    <button class="main-btn" onclick="goToSelected()">
+        ✔ OK
+    </button>
+
+    <br><br>
+    <!-- Button to gallery -->
+    <button class="main-btn" onclick="location.href='Gallery.html'">
+        View My Gallery
+    </button>
 
 </section>
 

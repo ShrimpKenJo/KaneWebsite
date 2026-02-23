@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Activity 2</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif, gothic;
+}
+
+body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 30px;
+    color: white;
+}
+
+.text-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.text-box {
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moving-text {
+    position: absolute;
+    white-space: nowrap;
+}
+
+
+.up { animation: moveUp 4s infinite ease-in-out; }
+.down { animation: moveDown 4s infinite ease-in-out; }
+.left { animation: moveLeft 6s infinite ease-in-out; }
+.right { animation: moveRight 7s infinite ease-in-out; }
+.diagonal { animation: moveDiagonal 4s infinite ease-in-out; }
+
+@keyframes moveUp { from { transform: translateY(70px); } to { transform: translateY(0); } }
+@keyframes moveDown { from { transform: translateY(-70px); } to { transform: translateY(70px); } }
+@keyframes moveLeft { from { transform: translateX(600px); } to { transform: translateX(-600px); } }
+@keyframes moveRight { from { transform: translateX(-600px); } to { transform: translateX(600px); } }
+@keyframes moveDiagonal { from { transform: translate(0,50px); } to { transform: translate(0,-50px); } }
+
+
+.box1 { background: #0f172a; border: 4px solid #38bdf8; font-size: 60px; color: #38bdf8 }
+.box2 { background: #1e40af; border: 4px solid blue; font-size: 50px; color: WHITE }
+.box3 { background: #065f46; border: 4px solid #34d399; font-size: 50px; color:#34d399 }
+.box4 { background: #7c2d12; border: 3px double #fb923c; font-size: 40px; color: #fb923c}
+.box5 { background: #3f3f46; border: 2px solid #e879f9; font-size: 28px; color: #e879f9}
+
+/* Grid for images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    gap: 20px;
+}
+
+
+.image-box {
+    height: 250px;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+
+.img1 { border: 5px solid #ff0000; filter: brightness(2); }
+.img2 { border: 5px solid #00ff00; filter: grayscale(50%); }
+.img3 { border: 5px solid #0000ff; filter: saturate(200%); }
+.img4 { border: 5px solid #ffff00; filter: contrast(120%); }
+.img5 { border: 5px solid #ff00ff; filter: saturate(150%); }
+.img6 { border: 5px solid #00ffff; filter: hue-rotate(90deg); }
+.img7 { border: 5px solid #ffa500; filter: saturate(00%); }
+.img8 { border: 5px solid #8a2be2; filter: blur(1px); }
+.img9 { border: 5px solid #ff1493; filter: brightness(0.8); }
+.img10 { border: 5px solid #1e90ff; filter: saturate(200%); }
+.Back-btn {
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #00aaff;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+</style>
+</head>
+<body>
+
+<div class="text-stack">
+    <div class="text-box box1"><div class="moving-text up">ACTIVITY 2</div></div>
+    <div class="text-box box2"><div class="moving-text down">KANE JOEL P. LACABA</div></div>
+    <div class="text-box box3"><div class="moving-text left">MY IMAGES</div></div>
+    <div class="text-box box4"><div class="moving-text right">MY IMAGES</div></div>
+    <div class="text-box box5"><div class="moving-text diagonal">MY IMAGES</div></div>
+</div>
+
+<div class="image-grid">
+    <div class="image-box img1"><img src="cat.jpg"></div>
+    <div class="image-box img2"><img src="cat2.jpg"></div>
+    <div class="image-box img3"><img src="cat3.jpg"></div>
+    <div class="image-box img4"><img src="cat4.jpg"></div>
+    <div class="image-box img5"><img src="cat5.jpg"></div>
+    <div class="image-box img6"><img src="cat6.jpg"></div>
+    <div class="image-box img7"><img src="cat7.jpg"></div>
+    <div class="image-box img8"><img src="cat8.jpg"></div>
+    <div class="image-box img9"><img src="cat9.jpg"></div>
+    <div class="image-box img10"><img src="cat10.jpg"></div>
+</div>
+<div class="back-area">
+    <button class="Back-btn" onclick="location.href='index.html'">
+        ⬅ Back to Home
+    </button>
+</div>
+</body>
+</html>
