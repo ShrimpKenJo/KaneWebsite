@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h2>ShrimpKenjo</h2>
+
+    <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="AboutMe.html">About</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="Favorites.html">Favorites</a></li>
+    </ul>
+</nav>
+
+<section>
+
+    <h2 class="title">🎬 Favorite Movies</h2>
+
+    <p>Select a genre:</p>
+
+    <br>
+
+    <!-- Dropdown -->
+    <select id="movieGenreSelect" style="padding:10px;font-size:16px;">
+        <option value="">-- Choose Genre --</option>
+        <option value="Action.html">Action</option>
+        <option value="Romance.html">Romance</option>
+        <option value="Comedy.html">Comedy</option>
+        <option value="Horror.html">Horror</option>
+        <option value="SciFi.html">Sci-Fi</option>
+    </select>
+
+    <br><br>
+
+    <!-- OK Button -->
+    <button class="main-btn" onclick="goToMovieGenre()">
+        OK
+    </button>
+
+</section>
+
+<!-- Back -->
+<div class="back-area">
+    <button class="Back-btn" onclick="location.href='Favorites.html'">
+        ⬅ Back to Favorites
+    </button>
+</div>
+
+<footer>
+    © 2025 Shrimpkenjo. All rights reserved.
+</footer>
+
+<script>
+function goToMovieGenre() {
+    var selected = document.getElementById("movieGenreSelect").value;
+    if (selected === "") {
+        alert("Please select a genre first!");
+    } else {
+        window.location.href = selected;
+    }
+}
+</script>
+
+</body>
+</html>
