@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
-        // Allow only 1 checkbox at a time
         function handleSelection(clickedBox) {
             const checkboxes = document.querySelectorAll('input[name="HTMLAct"]');
             checkboxes.forEach(box => {
@@ -16,7 +15,6 @@
             });
         }
 
-        // Go to selected activity page
         function goToSelected() {
             const selected = document.querySelector('input[name="HTMLAct"]:checked');
 
