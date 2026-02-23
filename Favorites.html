@@ -4,6 +4,37 @@
     <meta charset="UTF-8">
     <title>Favorites</title>
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        function handleSelection(clickedBox) {
+            const checkboxes = document.querySelectorAll('input[name="favorite"]');
+            
+            checkboxes.forEach(box => {
+                if (box !== clickedBox) {
+                    box.checked = false;
+                }
+            });
+        }
+
+        function goToSelected() {
+            const selected = document.querySelector('input[name="favorite"]:checked');
+
+            if (!selected) {
+                alert("⚠ Please select one option first.");
+                return;
+            }
+
+            if (selected.value === "songs") {
+                location.href = "FavSongs.html";
+            } 
+            else if (selected.value === "movies") {
+                location.href = "FavMovie.html";
+            }
+            else if (selected.value === "photos") {
+                location.href = "FavPhoto.html";
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -24,18 +55,33 @@
 
     <h2 class="title">My Favorites</h2>
 
-    <p>Select what you want to see:</p>
+    <p>Select ONLY ONE option:</p>
 
     <br>
 
-    <button class="main-btn" onclick="location.href='FavSongs.html'">
+    <label>
+        <input type="checkbox" name="favorite" value="songs" onclick="handleSelection(this)">
         🎵 Favorite Songs
-    </button>
+    </label>
 
     <br><br>
 
-    <button class="main-btn" onclick="location.href='FavMovie.html'">
+    <label>
+        <input type="checkbox" name="favorite" value="movies" onclick="handleSelection(this)">
         🎬 Favorite Movies
+    </label>
+
+    <br><br>
+
+    <label>
+        <input type="checkbox" name="favorite" value="photos" onclick="handleSelection(this)">
+        📸 Favorite Photos
+    </label>
+
+    <br><br>
+
+    <button class="main-btn" onclick="goToSelected()">
+        ✔ OK
     </button>
 
 </section>
